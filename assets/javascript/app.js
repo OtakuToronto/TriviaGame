@@ -43,7 +43,8 @@ var triviaQuestions = [{
 var gifArray = ['question1', 'question2', 'question3', 'question4', 'question5', 'question6', 'question7', 'question8', 'question9', 'question10'];
 
 var currentQuestion; 
-var correctAnswer; var incorrectAnswer; 
+var correctAnswer; 
+var incorrectAnswer; 
 var unanswered; 
 var seconds; 
 var time; 
@@ -68,6 +69,7 @@ $('#startOverBtn').on('click', function(){
 });
 
 function newGame(){
+	$('.content').empty();
 	$('#finalMessage').empty();
 	$('#correctAnswers').empty();
 	$('#incorrectAnswers').empty();
@@ -130,7 +132,7 @@ function answerPage(){
 	var rightAnswerText = triviaQuestions[currentQuestion].answerList[triviaQuestions[currentQuestion].answer];
 	var rightAnswerIndex = triviaQuestions[currentQuestion].answer;
 	
-	$('#gif').html('<img src = "assets/images/'+ gifArray[currentQuestion] +'.gif" width = "400px">');
+	$('#gif').html('<img src = "assets/images/'+ gifArray[currentQuestion] +'.gif" width = "425px" height = "250px">');
 	//checks to see correct, incorrect, or unanswered
 	if((userSelect == rightAnswerIndex) && (answered == true)){
 		correctAnswer++;
